@@ -175,7 +175,7 @@ slice-4 trades-lifecycle       slice-8 exchange-import-boundary
 미적용 테이블은 없습니다. 서버 코드에서 `service_role`을 쓰지 않고 anon key와 RLS 경로만
 사용해, 애플리케이션 버그가 나도 DB가 최종 방어선으로 남게 했습니다.
 
-**CI 게이트** (`web-guard.yml`)
+**CI 검사** (`web-guard.yml`)
 
 ```
 tsc --noEmit            타입 검사

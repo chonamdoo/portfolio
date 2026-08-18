@@ -12,7 +12,7 @@ agent-flow  ──(이 절차로)──>  aitrading        자동매매 봇 (운
 
 | 프로젝트 | 무엇 | 규모 | 코드 |
 |---|---|---|---|
-| [agent-flow](case-studies/agent-flow.md) | AI 개발 워크플로 CLI와 검증 게이트 | Python 88,320줄 · 커밋 425 | [GitHub](https://github.com/chonamdoo/agent-flow) |
+| [agent-flow](case-studies/agent-flow.md) | AI 개발 워크플로 CLI와 검증 절차 | Python 88,320줄 · 커밋 425 | [GitHub](https://github.com/chonamdoo/agent-flow) |
 | [aitrading](case-studies/aitrading.md) | Bybit 선물 자동매매 봇 | Python 118,273줄 · 테스트 2,265개 · 커밋 428 | 비공개 (실거래 전략·키) |
 | [trading-journal](case-studies/trading-journal.md) | 크립토 선물 거래일지 | TypeScript 30,655줄 · 커밋 156 | [GitHub](https://github.com/chonamdoo/trading-journal) |
 | [AI 개발 교육](case-studies/teaching.md) | 강의 자료 제작 — 같은 원리를 비개발자용으로 | 슬라이드 37장 | 문서 |
@@ -79,10 +79,10 @@ Next.js App Router와 Supabase로 만들었고 API 라우트 50개, 테스트 13
 - **검증 기준의 합의 절차** — 마커 목록을 누가 정하고 어떻게 바꾸는가. 지금은 제가
   정했기 때문에 제게만 맞습니다.
 - **팀원마다 다른 숙련도** — 절차를 이해하고 쓰는 사람과, 막히는 지점에서 우회로를 찾는
-  사람에게 같은 게이트가 같은 의미인지 확인하지 못했습니다. [교육](case-studies/teaching.md)에서
+  사람에게 같은 검사 단계가 같은 의미인지 확인하지 못했습니다. [교육](case-studies/teaching.md)에서
   이 문제를 먼저 만났고, 어휘를 바꾸고 검증을 프롬프트에 넣는 식으로 일부는 다뤘습니다.
   다만 그건 일방향 전달이었지 합의는 아니었습니다.
-- **마찰과 신뢰의 손익 분기점** — 게이트가 많아 혼자 쓸 땐 감당되지만, 팀에 넣으면 "왜
+- **마찰과 신뢰의 손익 분기점** — 검사 단계가 많아 혼자 쓸 땐 감당되지만, 팀에 넣으면 "왜
   이렇게 오래 걸리냐"는 반발이 먼저 옵니다. 어디까지가 지불할 만한 마찰인지 기준이 없습니다.
 - **리뷰 서브에이전트 비용** — 리뷰어를 병렬로 띄우면 토큰 비용이 배로 늘어납니다. 팀
   규모로 곱했을 때의 손익을 계산해 본 적이 없습니다.
