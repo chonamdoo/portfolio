@@ -15,7 +15,7 @@ agent-flow  ──(이 절차로)──>  aitrading        자동매매 봇 (운
 | [agent-flow](case-studies/agent-flow.md) | AI 개발 워크플로 CLI와 검증 게이트 | Python 88,320줄 · 커밋 425 | [GitHub](https://github.com/chonamdoo/agent-flow) |
 | [aitrading](case-studies/aitrading.md) | Bybit 선물 자동매매 봇 | Python 118,273줄 · 테스트 2,265개 · 커밋 428 | 비공개 (실거래 전략·키) |
 | [trading-journal](case-studies/trading-journal.md) | 크립토 선물 거래일지 | TypeScript 30,655줄 · 커밋 156 | [GitHub](https://github.com/chonamdoo/trading-journal) |
-| [AI 개발 교육](case-studies/teaching.md) | 강의 자료 제작 — 같은 원리를 비개발자용으로 | 슬라이드 37장 · 실습 12파트 · 스타터 앱 | 문서 |
+| [AI 개발 교육](case-studies/teaching.md) | 강의 자료 제작 — 같은 원리를 비개발자용으로 | 슬라이드 37장 | 문서 |
 | [AI 디자인 워크플로](case-studies/ai-design-workflow.md) | 쉬운 길 · 별일 — 디자인 시스템과 마스터 프롬프트 | 화면 43개 · 브랜드 스펙 2벌 | 문서 |
 
 ---
