@@ -3,9 +3,9 @@
 크립토 선물 거래일지 웹 서비스.
 
 **코드** [github.com/chonamdoo/trading-journal](https://github.com/chonamdoo/trading-journal)
-**규모** TypeScript 235파일 27,377줄 · 테스트 135개 · 커밋 156
-**구성** API 라우트 50개 · 페이지 13개 · 기능 모듈 6개
-**운영** Vercel 배포 중 · Next.js App Router + Supabase
+**규모** TypeScript 30,655줄 (src+tests) · 커밋 156 · SPEC 문서 28건
+**구성** API 라우트 50개 · 페이지 13개 · 기능 모듈 6개 · 마이그레이션 26건
+**운영** [mytradelog.app](https://mytradelog.app) 실사용자 운영 중 · Next.js App Router + Supabase
 
 ---
 
@@ -149,7 +149,7 @@ slice-4 trades-lifecycle       slice-8 exchange-import-boundary
 키 ID(`kid`)를 함께 기록해 키 링 회전을 지원합니다. 암호화 키를 교체해도 과거 데이터를
 이전 키로 복호화할 수 있습니다.
 
-**RLS 전면 적용** — 14개 테이블 전부 Row Level Security를 켰고 정책은 46개입니다.
+**RLS 전면 적용** — 15개 테이블 전부 Row Level Security를 켰고 정책은 49개입니다.
 미적용 테이블은 없습니다. 서버 코드에서 `service_role`을 쓰지 않고 anon key와 RLS 경로만
 사용해, 애플리케이션 버그가 나도 DB가 최종 방어선으로 남게 했습니다.
 
@@ -178,10 +178,27 @@ Secret Scan             시크릿 스캔
 
 ---
 
+## 모바일 앱
+
+같은 백엔드를 쓰는 React Native + Expo 앱을 따로 만들었습니다. 탭 5개 구성이고 API 모듈을
+인증·프로필·거래·리포트 넷으로 나눴습니다.
+
+- 이메일 로그인·가입·비밀번호 재설정, Google 로그인
+- 거래 입력 — 금액과 수량 양방향 환산, 손절가와 예상 손익 미리보기, 스크린샷 첨부
+- 분할 청산과 추가 진입 시 가중평균 진입가 자동 산출
+- 서버 검색, CSV 내보내기, 지표 10종, 월간 캘린더, AI 리포트
+
+401 응답이 오면 토큰 갱신을 요청당 1회로 묶어 재시도합니다. 화면 여러 개가 동시에 401을
+받아도 갱신 요청이 중복되지 않습니다.
+
+---
+
 ## 남은 것
 
-- `/onboarding` 라우트가 빈 파일입니다. 경로는 있는데 구현이 없습니다
 - ADR이 1건뿐입니다. aitrading은 17건인데 이쪽은 설계 결정을 문서로 남기는 습관이 늦게
   붙었습니다
 - 체크리스트를 건너뛰어도 저장됩니다. 경고만 띄우는 선택이 옳았는지는 아직 데이터가
   부족해 판단하지 못했습니다
+- 문서와 코드가 어긋난 적이 있습니다. `docs/features-and-design-system.md`는 4월 26일
+  기준이라 이후 SPEC으로 구현한 화면이 "미구현"으로 남아 있었습니다. `agent-flow`가
+  README 숫자를 검사하는 이유가 이것입니다

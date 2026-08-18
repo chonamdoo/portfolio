@@ -12,9 +12,9 @@ agent-flow  ──(이 절차로)──>  aitrading        자동매매 봇 (운
 
 | 프로젝트 | 무엇 | 규모 | 코드 |
 |---|---|---|---|
-| [agent-flow](case-studies/agent-flow.md) | AI 개발 워크플로 CLI와 검증 게이트 | Python 31,801줄 · 커밋 425 | [GitHub](https://github.com/chonamdoo/agent-flow) |
-| [aitrading](case-studies/aitrading.md) | Bybit 선물 자동매매 봇 | Python 53,226줄 · 테스트 1,215개 · 커밋 428 | 비공개 (실거래 전략·키) |
-| [trading-journal](case-studies/trading-journal.md) | 크립토 선물 거래일지 | TypeScript 27,377줄 · 커밋 156 | [GitHub](https://github.com/chonamdoo/trading-journal) |
+| [agent-flow](case-studies/agent-flow.md) | AI 개발 워크플로 CLI와 검증 게이트 | Python 88,320줄 · 커밋 425 | [GitHub](https://github.com/chonamdoo/agent-flow) |
+| [aitrading](case-studies/aitrading.md) | Bybit 선물 자동매매 봇 | Python 118,273줄 · 테스트 2,265개 · 커밋 428 | 비공개 (실거래 전략·키) |
+| [trading-journal](case-studies/trading-journal.md) | 크립토 선물 거래일지 | TypeScript 30,655줄 · 커밋 156 | [GitHub](https://github.com/chonamdoo/trading-journal) |
 
 ---
 
@@ -57,13 +57,13 @@ AI 코딩 도구를 실무에 붙이면서 세 가지 문제에 반복해서 부
 
 **[aitrading](case-studies/aitrading.md)** — Bybit USDT-perp 선물 자동매매 봇.
 차트 패턴과 CCI 다이버전스로 진입하고, Clean Architecture 4계층에 ADR 17건,
-테스트 함수 1,215개를 쌓았습니다. Docker와 GHCR로 도쿄 리전 서버에 올려 운영 중입니다.
+테스트 2,265개를 쌓았습니다. Docker와 GHCR로 도쿄 리전 서버에 올려 운영 중입니다.
 자동 배포는 의도적으로 두지 않았습니다. 진행 중인 포지션이 있으면 배포를 보류합니다.
 
 **[trading-journal](case-studies/trading-journal.md)** — 크립토 선물 거래일지 웹 서비스.
 Next.js App Router와 Supabase로 만들었고 API 라우트 50개, 테스트 135개입니다.
 거래소 5종의 API 키를 AES-256-GCM으로 암호화해 보관하고 키 링 회전을 지원합니다.
-14개 테이블 전부 RLS를 켰고 정책은 46개입니다. Vercel에서 운영 중입니다.
+15개 테이블 전부 RLS를 켰고 정책은 49개입니다. Vercel에서 운영 중입니다.
 
 ---
 

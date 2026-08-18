@@ -3,7 +3,7 @@
 AI 코딩 에이전트를 검증 가능한 개발 절차 위에서 동작시키는 CLI 워크플로 도구.
 
 **코드** [github.com/chonamdoo/agent-flow](https://github.com/chonamdoo/agent-flow)
-**규모** Python 60파일 31,801줄 · 테스트 55파일 · 커밋 425
+**규모** Python 88,320줄 (src+tests) · 테스트 55파일 · 커밋 425
 **구성** 워크플로 5개 · 스킬 49개 · eval 케이스 3종
 
 ---
@@ -159,8 +159,8 @@ domain-grill → product-brief → prd → slice-plan → plan-review → ddd-de
 
 이 절차 위에서 서비스 두 개를 만들어 운영하고 있습니다.
 
-- [aitrading](aitrading.md) — Python 53,226줄, 테스트 함수 1,215개, 커밋 428
-- [trading-journal](trading-journal.md) — TypeScript 27,377줄, 커밋 156
+- [aitrading](aitrading.md) — Python 118,273줄, 테스트 2,265개, 커밋 428
+- [trading-journal](trading-journal.md) — TypeScript 30,655줄, 커밋 156
 
 두 저장소 모두 `.agent-flow/` 디렉터리에 단계별 산출물이 남아 있습니다. handoff 문서,
 slice-plan, 리뷰 기록이 들어 있고 절차가 실제로 돌았다는 증거입니다.
