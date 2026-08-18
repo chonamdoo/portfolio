@@ -2,9 +2,9 @@
 
 크립토 선물 거래일지 웹 서비스.
 
-**코드** [github.com/chonamdoo/trading-journal](https://github.com/chonamdoo/trading-journal)
-**규모** TypeScript 30,655줄 (src+tests) · 커밋 156 · SPEC 문서 28건
-**구성** API 라우트 50개 · 페이지 13개 · 기능 모듈 6개 · 마이그레이션 26건
+**코드** [github.com/chonamdoo/trading-journal](https://github.com/chonamdoo/trading-journal)  
+**규모** TypeScript 30,655줄 (src+tests) · 커밋 156 · SPEC 문서 28건  
+**구성** API 라우트 50개 · 페이지 13개 · 기능 모듈 6개 · 마이그레이션 26건  
 **운영** [mytradelog.app](https://mytradelog.app) 실사용자 운영 중 · Next.js App Router + Supabase
 
 ---

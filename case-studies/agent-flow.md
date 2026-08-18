@@ -2,8 +2,8 @@
 
 AI 코딩 에이전트를 검증 가능한 개발 절차 위에서 동작시키는 CLI 워크플로 도구.
 
-**코드** [github.com/chonamdoo/agent-flow](https://github.com/chonamdoo/agent-flow)
-**규모** Python 88,320줄 (src+tests) · 테스트 55파일 · 커밋 425
+**코드** [github.com/chonamdoo/agent-flow](https://github.com/chonamdoo/agent-flow)  
+**규모** Python 88,320줄 (src+tests) · 테스트 55파일 · 커밋 425  
 **구성** 워크플로 5개 · 스킬 49개 · eval 케이스 3종
 
 ---
