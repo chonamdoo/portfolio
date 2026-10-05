@@ -1,13 +1,15 @@
 # 포트폴리오 — 조남두
 
-AI 코딩 에이전트로 만든 서비스와, 그 결과물을 신뢰하려고 만든 절차.
+AI 코딩 에이전트로 만든 서비스와 도구, 그리고 그 결과물을 신뢰하려고 만든 절차.
 
-세 프로젝트는 따로 있지 않고 하나의 순서입니다. AI가 만든 코드를 검증하는 절차를 먼저
-도구로 만들었고, 그 절차 위에서 서비스 두 개를 만들어 운영하고 있습니다.
+AI가 만든 코드를 검증하는 절차를 먼저 도구로 만들었고, 그 절차 위에서 서비스 두 개와 macOS 앱 하나를
+만들었습니다. 에이전트가 스스로 보고한 내용은 판정 근거로 쓰지 않는다는 원칙은 QA 자동화와 코딩
+에이전트용 스킬에도 적용했습니다.
 
 ```
 agent-flow  ──(이 절차로)──>  aitrading        자동매매 봇 (운영 중)
-                        └──>  trading-journal  거래일지 웹 (운영 중)
+                        ├──>  trading-journal  거래일지 웹 (운영 중)
+                        └──>  AgentDeck        에이전트 터미널 macOS 앱 (pre-release)
 ```
 
 | 프로젝트 | 무엇 | 규모 | 코드 |
@@ -15,6 +17,11 @@ agent-flow  ──(이 절차로)──>  aitrading        자동매매 봇 (운
 | [agent-flow](case-studies/agent-flow.md) | AI 개발 워크플로 CLI와 검증 절차 | Python 88,320줄 · 커밋 425 | [GitHub](https://github.com/chonamdoo/agent-flow) |
 | [aitrading](case-studies/aitrading.md) | Bybit 선물 자동매매 봇 | Python 118,273줄 · 테스트 2,265개 · 커밋 428 | 비공개 (실거래 전략·키) |
 | [trading-journal](case-studies/trading-journal.md) | 크립토 선물 거래일지 | TypeScript 30,655줄 · 커밋 156 | [GitHub](https://github.com/chonamdoo/trading-journal) |
+| [AgentDeck](case-studies/agent-deck.md) | Herdr에서 도는 코딩 에이전트를 한 창에서 다루는 macOS 앱 | Swift 27,529줄 · 테스트 264개 · 커밋 44 | [GitHub](https://github.com/chonamdoo/AgentDeck) |
+| [app-qa](case-studies/app-qa.md) | 앱·웹 QA 자동화 — 문서에서 테스트를 만들어 실행하고 판정 | TypeScript 31,103줄 · 테스트 586개 · 커밋 33 | [GitHub](https://github.com/chonamdoo/app-qa) |
+| [web-qa](case-studies/agent-skills.md#web-qa) | 웹 QA 에이전트 스킬과 결과 검사 스크립트 | 스킬 문서 438줄 · 테스트 19개 · 커밋 13 | [GitHub](https://github.com/chonamdoo/web-qa-skill) |
+| [rag-retrieval-optimization](case-studies/agent-skills.md#rag-retrieval-optimization) | RAG 검색 설계 스킬과 규칙 측정 실험 | Python 499줄 · 평가 문항 66개 · 커밋 5 | [GitHub](https://github.com/chonamdoo/rag-skill) |
+| [teach-skill](case-studies/agent-skills.md#teach-skill) | 답 대신 질문과 힌트를 주는 학습 파트너 스킬 | 스킬 문서 205줄 · 평가 입력 24개 | [GitHub](https://github.com/chonamdoo/teach_skill) |
 | [AI 개발 교육](case-studies/teaching.md) | 강의 자료 제작 — 같은 원리를 비개발자용으로 | 슬라이드 37장 | 문서 |
 | [AI 디자인 워크플로](case-studies/ai-design-workflow.md) | 쉬운 길 · 별일 — 디자인 시스템과 마스터 프롬프트 | 화면 43개 · 브랜드 스펙 2벌 | 문서 |
 
@@ -67,6 +74,28 @@ Next.js App Router와 Supabase로 만들었고 API 라우트 50개, 테스트 13
 거래소 5종의 API 키를 AES-256-GCM으로 암호화해 보관하고 키 링 회전을 지원합니다.
 15개 테이블 전부 RLS를 켰고 정책은 49개입니다. Vercel에서 운영 중입니다.
 
+**[AgentDeck](case-studies/agent-deck.md)** — Herdr에서 도는 코딩 에이전트를 한 창에서 다루는 네이티브
+macOS 앱. pane마다 모델·추론 강도·컨텍스트 사용률을 보여 주고, 에이전트가 실제로 고치는 worktree를 먼저
+보여 줍니다. agent-flow가 작업을 worktree로 격리하면서 생긴 "변경 0" 착시를 여기서 풀었습니다. 터미널
+엔진은 메모리와 한국어 입력을 재서 SwiftTerm을 임시로 쓰고 있고, 최종 결정은 사람이 직접 하는 한국어 입력
+확인 뒤로 미뤘습니다. 그 확인과 Terminal.app 대비 메모리 비교가 끝나지 않아, 배포 스크립트가 정식 릴리스를
+막고 있습니다.
+
+---
+
+## 같은 원칙을 적용한 곳
+
+**[app-qa](case-studies/app-qa.md)** — 기획서에서 테스트를 만들고 Android·iOS 앱과 웹사이트에서 실행해
+판정합니다. PASS는 코드의 결정적 검사나, 미리 정한 기준으로 보정한 모델 답에서만 나옵니다. 확실하지
+않으면 ERROR나 INCONCLUSIVE로 남기고, 결과를 모르는 동작은 다시 시도하지 않습니다. 모델 임계치는
+골든셋의 합격 기준을 첫 실호출 전에 고정한 뒤 정했고, 기준을 넘지 못한 시도도 기록으로 남겼습니다.
+
+**[에이전트 스킬 3종](case-studies/agent-skills.md)** — 웹 QA(web-qa), RAG 검색 설계
+(rag-retrieval-optimization), 학습 파트너(teach-skill). 스킬마다 무엇으로 확인했고 무엇은 확인하지
+않았는지를 저장소에 남겼습니다. rag 스킬은 한국어 위키백과 66문항으로 규칙을 쟀습니다. "200자로 자른다"는
+상한이 아닌 시작값으로 보게 됐고, 검토 단계에서 충돌로 적어 둔 "20개면 리랭커 생략"은 이 데이터에서
+지지되지 않았습니다. 셋 모두 스킬 없이 돌린 비교군은 아직 없습니다.
+
 ---
 
 ## 지금 남은 문제
@@ -97,3 +126,7 @@ Next.js App Router와 Supabase로 만들었고 API 라우트 50개, 테스트 13
 각 케이스 스터디의 수치는 코드베이스에서 직접 확인한 값입니다. `agent-flow`는 README에
 적힌 워크플로 단계 수와 스킬 수를 `npm run parity:check`가 정본 파일과 대조합니다.
 문서가 낡으면 검사가 깨집니다.
+
+AgentDeck, app-qa, 에이전트 스킬 3종의 수치는 2026-10-05에 각 저장소 main을 받아 셌습니다. 줄 수는
+직접 작성한 파일만 `wc -l`로 셌고, 함께 들어 있는 외부 코드·fixture·평가 데이터는 뺐습니다. 자세한 기준은
+각 케이스 스터디 끝의 "수치 기준"에 있습니다.
